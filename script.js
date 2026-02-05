@@ -28,8 +28,8 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  if (totaal > 6) {
-    showError("Maximaal 6 personen per reservering.");
+  if (totaal > 10) {
+    showError("Maximaal 10 personen per reservering.");
     return;
   }
 
