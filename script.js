@@ -2,6 +2,12 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaf9cNDEbXhnI9J1tn6
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
+const response = await fetch(SCRIPT_URL, {
+  method: "POST",
+  mode: "no-cors",
+  body: JSON.stringify(data)
+});
+
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
