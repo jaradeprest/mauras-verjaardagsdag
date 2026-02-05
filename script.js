@@ -1,5 +1,4 @@
-// 🔴 VERVANG DIT MET JE EIGEN GOOGLE APPS SCRIPT WEB APP URL
-const SCRIPT_URL = "https://script.google.com/macros/s/XXXXXXXXXXXX/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwaf9cNDEbXhnI9J1tn6hNqGf8kZs2XjFMfU9sSwlpWM7u3S7MwvDmyZ5RwtsJi6BSCyA/exec";
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
