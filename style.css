@@ -49,7 +49,7 @@ body {
     transform: translateY(0) rotate(0deg);
   }
   100% {
-    bottom: 40px;     /* uiteindelijke positie naast formulier */
+    bottom: 0px;     /* uiteindelijke positie naast formulier */
     transform: translateY(0) rotate(0deg);
   }
 }
