@@ -14,7 +14,6 @@ body {
   justify-content: center;
   font-family: Gill Sans, sans-serif;
   color: #FD6220;
-  background: white;
   position: relative; /* belangrijk voor absolute konijnen */
   padding: 40px;
 
