@@ -24,14 +24,13 @@ body {
 }
 
 /* Basis bunny styling */
-/* Basis styling van de konijnen */
 .bunny {
   position: absolute;
-  bottom: -100px; /* start onder scherm */
-  width: 80px;
+  bottom: -150px; /* start onder scherm */
+  width: 80px;    /* pas grootte aan */
   height: auto;
   z-index: 10;
-  animation: bunny-peek-bounce 3s ease-in-out infinite; /* hier refereer je keyframes */
+  animation: bunny-peek 2s ease-out forwards; /* forwards = blijft eindpositie */
 }
 
 /* Links en rechts positioneren */
@@ -43,33 +42,21 @@ body {
   right: 10px;
 }
 
-/* Keyframes voor in-en-uit-bounce */
-@keyframes bunny-peek-bounce {
+/* Keyframes: van onder naar eindpositie */
+@keyframes bunny-peek {
   0% {
-    bottom: -100px;  /* onder scherm */
+    bottom: -150px;   /* onder scherm */
     transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    bottom: 40px;    /* piek omhoog */
-    transform: translateY(-10px) rotate(-5deg);
-  }
-  50% {
-    bottom: -100px;  /* terug onder scherm */
-    transform: translateY(0) rotate(0deg);
-  }
-  75% {
-    bottom: 40px;    /* piek omhoog */
-    transform: translateY(-10px) rotate(5deg);
   }
   100% {
-    bottom: -100px;
+    bottom: 40px;     /* uiteindelijke positie naast formulier */
     transform: translateY(0) rotate(0deg);
   }
 }
 
 @media (max-width: 600px) {
   .bunny {
-    width: 50px;
+    width: 150px;
   }
 }
 
@@ -156,5 +143,8 @@ button:disabled {
     max-height: 90vh;
     overflow-y: auto;
     padding: 20px;
+  }
+  .bunny {
+    width: 50px;
   }
 }
