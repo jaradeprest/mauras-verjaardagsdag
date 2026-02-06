@@ -103,7 +103,7 @@ button {
 input:focus,
 select:focus {
   outline: none;
-  border-color: #8f32a8;
+  border-color: #4fd6ff;
 }
 
 button {
