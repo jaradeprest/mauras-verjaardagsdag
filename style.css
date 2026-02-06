@@ -14,13 +14,14 @@ body {
 }
 
 .container {
+  max-height: 90vh;
+  overflow-y: auto;
   max-width: 480px;
   margin: auto;
   background: #e694ff;
   padding: 2rem;
   border-radius: 14px;
   width: 100%;
-  max-width: 420px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
