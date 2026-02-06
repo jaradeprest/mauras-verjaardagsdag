@@ -7,7 +7,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Gill Sans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: white;
   background: #dbf3ff;
   padding: 60px;
