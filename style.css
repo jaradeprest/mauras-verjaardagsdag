@@ -42,15 +42,13 @@ body {
   right: 10px;
 }
 
-/* Keyframes: van onder naar eindpositie */
+/* Optioneel: animatie van onder het scherm omhoog bij laden */
 @keyframes bunny-peek {
   0% {
-    bottom: -150px;   /* onder scherm */
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(100%); /* start volledig onder scherm */
   }
   100% {
-    bottom: 0px;     /* uiteindelijke positie naast formulier */
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);    /* eindpositie = onderkant viewport */
   }
 }
 
