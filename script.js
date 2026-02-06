@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNQbUeobwc1kRRhUko58xionMkyYelvjvQzlenrvqt7IjWh3GaEi9fa_bMbEQpQdiw-A/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzveg2W-e2Afrhsh1Gp-LoInNZMWQ9v5HVhg-IeAG1G8jQRwVRW1g_K3OajbhZ_LYJtNg/exec";
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
