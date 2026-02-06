@@ -8,14 +8,15 @@ const BUILD_DATE = new Date().toLocaleString("nl-BE");
 document.getElementById("buildInfo").textContent =
   `Build ${BUILD_DATE}`;
 
-function setLoading(isLoading, text = "Verzenden..." {
+function setLoading(isLoading, text = "Verzenden...") {
   if (isLoading) {
     submitBtn.disabled = true;
-    submitBtn.dataset.originalText = submitBtn.textContent; 
+    submitBtn.dataset.originalText = submitBtn.textContent;
     submitBtn.textContent = text;
   } else {
     submitBtn.disabled = false;
-    submitBtn.textContent = submitBtn.dataset.originalText || "Wij komen eraan!";
+    submitBtn.textContent =
+      submitBtn.dataset.originalText || "Wij komen eraan!";
   }
 }
 
@@ -43,19 +44,22 @@ form.addEventListener("submit", async (e) => {
   //}
 
   if (!tijdslot || !naam || !email) {
-    showError("Vul alle verplichte velden in.");
-    return;
-  }
+  showError("Vul alle verplichte velden in.");
+  setLoading(false);
+  return;
+}
 
-  if (totaal < 1) {
-    showError("Minstens 1 persoon is verplicht.");
-    return;
-  }
+if (totaal < 1) {
+  showError("Minstens 1 persoon is verplicht.");
+  setLoading(false);
+  return;
+}
 
-  if (totaal > 10) {
-    showError("Maximaal 10 personen per reservering.");
-    return;
-  }
+if (totaal > 10) {
+  showError("Maximaal 10 personen per reservering.");
+  setLoading(false);
+  return;
+}
 
   const data = {
     //datum,
