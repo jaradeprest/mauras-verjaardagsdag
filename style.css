@@ -24,13 +24,14 @@ body {
 }
 
 /* Basis bunny styling */
+/* Basis styling van de konijnen */
 .bunny {
   position: absolute;
-  bottom: -150px; /* start onder scherm */
-  width: 80px; /* pas grootte aan */
+  bottom: -100px; /* start onder scherm */
+  width: 80px;
   height: auto;
   z-index: 10;
-  animation: bunny-peek 2s ease-out forwards, bunny-bounce 2s ease-in-out 2s infinite;
+  animation: bunny-peek-bounce 3s ease-in-out infinite; /* hier refereer je keyframes */
 }
 
 /* Links en rechts positioneren */
@@ -42,25 +43,28 @@ body {
   right: 10px;
 }
 
-/* Animatie: van onder scherm naar beetje omhoog */
-@keyframes bunny-peek {
+/* Keyframes voor in-en-uit-bounce */
+@keyframes bunny-peek-bounce {
   0% {
-    bottom: -150px;
+    bottom: -100px;  /* onder scherm */
     transform: translateY(0) rotate(0deg);
   }
-  50% {
-    bottom: 20px;
+  25% {
+    bottom: 40px;    /* piek omhoog */
     transform: translateY(-10px) rotate(-5deg);
   }
-  100% {
-    bottom: 40px; /* eindpositie boven schermrand */
+  50% {
+    bottom: -100px;  /* terug onder scherm */
     transform: translateY(0) rotate(0deg);
   }
-}
-
-@keyframes bunny-bounce {
-  0%, 100% { bottom: 40px; transform: translateY(0); }
-  50% { bottom: 50px; transform: translateY(-5px); }
+  75% {
+    bottom: 40px;    /* piek omhoog */
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    bottom: -100px;
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 @media (max-width: 600px) {
