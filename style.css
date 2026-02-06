@@ -35,11 +35,11 @@ input,
 select,
 button {
   width: 100%;
-  margin-top: 6px;
+  margin-top: 16px;
   padding: 12px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid #4e0763;
+  border: 1px solid #600a7a;
 }
 
 input:focus,
