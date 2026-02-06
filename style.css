@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: Gill Sans, sans-serif;
-  color: green;
+  color: white;
   background: #dbf3ff;
   position: relative; /* belangrijk voor absolute konijnen */
   padding: 60px;
