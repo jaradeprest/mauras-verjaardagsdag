@@ -68,7 +68,8 @@ h1 {
 
 h4 {
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 label {
