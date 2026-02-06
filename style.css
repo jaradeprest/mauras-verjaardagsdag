@@ -27,7 +27,7 @@ body {
 .bunny {
   position: absolute;
   bottom: -150px; /* start onder scherm */
-  width: 80px;    /* pas grootte aan */
+  width: 150px;    /* pas grootte aan */
   height: auto;
   z-index: 10;
   animation: bunny-peek 2s ease-out forwards; /* forwards = blijft eindpositie */
