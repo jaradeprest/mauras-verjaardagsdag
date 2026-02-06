@@ -81,6 +81,7 @@ label {
 select {
   padding-top: 12px;
   padding-bottom: 12px;
+  height: 40px;
 }
 
 select option {
