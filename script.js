@@ -3,6 +3,10 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxsAJG8dTHk0QpzKnjeF
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
 const submitBtn = document.getElementById("submitBtn");
+const BUILD_DATE = new Date().toLocaleString("nl-BE");
+
+document.getElementById("buildInfo").textContent =
+  `Build ${BUILD_DATE}`;
 
 function setLoading(isLoading, text = "Verzenden..." {
   if (isLoading) {
