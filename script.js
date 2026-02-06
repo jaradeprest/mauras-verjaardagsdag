@@ -2,9 +2,24 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxsAJG8dTHk0QpzKnjeF
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
+const submitBtn = document.getElementById("submitBtn");
+
+function setLoading(isLoading, text = "Verzenden..." {
+  if (isLoading) {
+    submitBtn.disabled = true;
+    submitBtn.dataset.originalText = submitBtn.textContent; 
+    submitBtn.textContent = text;
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.textContent = submitBtn.dataset.originalText || "Wij komen eraan!";
+  }
+}
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  setLoading(true);
+  
   melding.textContent = "";
   melding.className = "melding";
 
@@ -38,7 +53,6 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  // ✅ DATA HIER AANMAKEN (niet erboven!)
   const data = {
     //datum,
     tijdslot,
@@ -62,6 +76,8 @@ form.addEventListener("submit", async (e) => {
   } catch (error) {
     console.error(error);
     showError("❌ Er ging iets mis. Probeer het later opnieuw.");
+  } finally {
+    setLoading(false);
   }
 });
 
