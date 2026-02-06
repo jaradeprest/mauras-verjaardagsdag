@@ -2,21 +2,6 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxBcLfwla6B9bCqWvAyE
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
-const data = {
-  datum,
-  tijdslot,
-  naam,
-  email,
-  volwassenen,
-  kinderen,
-  totaal
-};
-const response = await fetch(SCRIPT_URL, {
-  method: "POST",
-  mode: "no-cors",
-  body: JSON.stringify(data)
-});
-
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -48,13 +33,23 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  // ✅ DATA HIER AANMAKEN (niet erboven!)
+  const data = {
+    datum,
+    tijdslot,
+    naam,
+    email,
+    volwassenen,
+    kinderen,
+    totaal
+  };
+
   try {
-    const response = await fetch(SCRIPT_URL, {
+    await fetch(SCRIPT_URL, {
       method: "POST",
+      mode: "no-cors", // nodig voor GitHub Pages + Apps Script
       body: JSON.stringify(data)
     });
-
-    if (!response.ok) throw new Error("Request mislukt");
 
     showSuccess("✅ Reservering succesvol opgeslagen!");
     form.reset();
