@@ -2,6 +2,15 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxBcLfwla6B9bCqWvAyE
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
+const data = {
+  datum,
+  tijdslot,
+  naam,
+  email,
+  volwassenen,
+  kinderen,
+  totaal
+};
 const response = await fetch(SCRIPT_URL, {
   method: "POST",
   mode: "no-cors",
@@ -38,16 +47,6 @@ form.addEventListener("submit", async (e) => {
     showError("Maximaal 10 personen per reservering.");
     return;
   }
-
-  const data = {
-    datum,
-    tijdslot,
-    naam,
-    email,
-    volwassenen,
-    kinderen,
-    totaal
-  };
 
   try {
     const response = await fetch(SCRIPT_URL, {
