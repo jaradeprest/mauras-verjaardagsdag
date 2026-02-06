@@ -7,8 +7,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Gill Sans, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: white;
+  font-family: Gill Sans, sans-serif;
+  color: green;
   background: #dbf3ff;
   padding: 60px;
 }
