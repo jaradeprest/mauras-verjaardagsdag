@@ -37,6 +37,8 @@ function showSuccess(text) {
 // Tijdsloten + beschikbaarheid ophalen en dropdown vullen
 async function loadTijdsloten() {
   const select = document.getElementById("tijdslot");
+  const select = document.getElementById("eten");
+
   if (!select) return;
 
   select.innerHTML = `<option value="">Kies een tijd</option>`;
@@ -61,7 +63,7 @@ async function loadTijdsloten() {
         opt.textContent = `${tijdslot} (vol)`;
         opt.disabled = true;
       } else {
-        opt.textContent = `${tijdslot} (nog ${beschikbaar} vrij)`;
+        opt.textContent = `${tijdslot} = ${eten} (nog ${beschikbaar} vrij)`;
       }
 
       select.appendChild(opt);
