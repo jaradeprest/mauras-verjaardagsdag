@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
   melding.textContent = "";
   melding.className = "melding";
 
-  const datum = document.getElementById("datum").value;
+  //const datum = document.getElementById("datum").value;
   const tijdslot = document.getElementById("tijdslot").value;
   const naam = document.getElementById("naam").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -18,7 +18,12 @@ form.addEventListener("submit", async (e) => {
   const totaal = volwassenen + kinderen;
 
   // Validatie
-  if (!datum || !tijdslot || !naam || !email) {
+  //if (!datum || !tijdslot || !naam || !email) {
+    //showError("Vul alle verplichte velden in.");
+    //return;
+  //}
+
+  if (!tijdslot || !naam || !email) {
     showError("Vul alle verplichte velden in.");
     return;
   }
@@ -35,7 +40,7 @@ form.addEventListener("submit", async (e) => {
 
   // ✅ DATA HIER AANMAKEN (niet erboven!)
   const data = {
-    datum,
+    //datum,
     tijdslot,
     naam,
     email,
