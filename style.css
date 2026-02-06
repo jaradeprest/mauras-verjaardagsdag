@@ -11,7 +11,7 @@ body {
   color: white;
   background: #dbf3ff;
   position: relative; /* belangrijk voor absolute konijnen */
-  padding: 60px;
+  padding: 40px;
 }
 
 .container {
