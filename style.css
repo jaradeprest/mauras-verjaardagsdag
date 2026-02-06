@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: Gill Sans, sans-serif;
-  color: white;
+  color: #FD6220;
   background: white;
   position: relative; /* belangrijk voor absolute konijnen */
   padding: 40px;
@@ -17,7 +17,7 @@ body {
 .container {
   max-width: 480px;
   margin: auto;
-  background: #e0b8ff;
+  background: #FCC3CA;
   padding: 1rem;
   border-radius: 14px;
   width: 100%;
@@ -75,7 +75,7 @@ button {
   padding: 12px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid #600a7a;
+  border: 1px solid #ff8f9d;
   line-height: 1.5;
   font-family: Gill Sans, sans-serif;
 }
@@ -83,12 +83,12 @@ button {
 input:focus,
 select:focus {
   outline: none;
-  border-color: #4fd6ff;
+  border-color: #ff8f9d;
 }
 
 button {
   margin-top: 24px;
-  background: #8f32a8;
+  background: #FD6220;
   color: white;
   font-weight: 600;
   border: none;
@@ -97,11 +97,11 @@ button {
 }
 
 button:hover {
-  background: #d46ef0;
+  background: #ff8f9d;
 }
 
 button:disabled {
-  background: #edd0f5;
+  background: #ffc1a6;
   cursor: not-allowed;
 }
 
@@ -112,11 +112,11 @@ button:disabled {
 }
 
 .melding.success {
-  color: #fae8ff;
+  color: #388f55;
 }
 
 .melding.error {
-  color: #ff0022;
+  color: #f7072b;
 }
 
 /* Mobiel extra spacing */
