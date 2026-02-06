@@ -28,7 +28,6 @@ form.addEventListener("submit", async (e) => {
   melding.textContent = "";
   melding.className = "melding";
 
-  //const datum = document.getElementById("datum").value;
   const tijdslot = document.getElementById("tijdslot").value;
   const naam = document.getElementById("naam").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -36,12 +35,6 @@ form.addEventListener("submit", async (e) => {
   const kinderen = Number(document.getElementById("kinderen").value);
 
   const totaal = volwassenen + kinderen;
-
-  // Validatie
-  //if (!datum || !tijdslot || !naam || !email) {
-    //showError("Vul alle verplichte velden in.");
-    //return;
-  //}
 
   if (!tijdslot || !naam || !email) {
   showError("Vul alle verplichte velden in.");
@@ -72,18 +65,29 @@ if (totaal > 10) {
   };
 
   try {
-    await fetch(SCRIPT_URL, {
+    const response = await fetch(SCRIPT_URL, {
       method: "POST",
-      mode: "no-cors", // nodig voor GitHub Pages + Apps Script
       body: JSON.stringify(data)
     });
-
+  
+    if (!response.ok) {
+      throw new Error("Netwerkfout");
+    }
+  
+    const result = await response.json();
+  
+    if (result.status === "vol") {
+      showError("❌ Dit tijdslot is al vol. Kies een ander moment.");
+      return;
+    }
+  
     showSuccess("✅ Reservering succesvol opgeslagen!");
     form.reset();
-
+  
   } catch (error) {
-    console.error(error);
-    showError("❌ Er ging iets mis. Probeer het later opnieuw.");
+    console.error("Fetch error:", error);
+    showError("❌ Er ging iets mis bij het verzenden. Probeer opnieuw.");
+  
   } finally {
     setLoading(false);
   }
