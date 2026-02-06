@@ -37,7 +37,6 @@ function showSuccess(text) {
 // Tijdsloten + beschikbaarheid ophalen en dropdown vullen
 async function loadTijdsloten() {
   const select = document.getElementById("tijdslot");
-  const select = document.getElementById("eten");
 
   if (!select) return;
 
@@ -53,6 +52,7 @@ async function loadTijdsloten() {
     for (const s of slots) {
       const tijdslot = String(s.tijdslot || "").trim();
       const beschikbaar = Number(s.beschikbaar);
+      const eten = String(s.eten || "").trim();
 
       if (!tijdslot) continue;
 
