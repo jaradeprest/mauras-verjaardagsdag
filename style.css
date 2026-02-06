@@ -9,14 +9,14 @@ body {
   justify-content: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: white;
-  background: #f1c2ff;
+  background: #dbf3ff;
   padding: 60px;
 }
 
 .container {
   max-width: 480px;
   margin: auto;
-  background: #dbf3ff;
+  background: #e0b8ff;
   padding: 2rem;
   border-radius: 14px;
   width: 100%;
