@@ -3,10 +3,13 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: white;
   background: #f1c2ff;
-  margin: 0;
   padding: 60px;
 }
 
