@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby74mLio06cW7fTWE_ifOqP1c4Lm-Tbw1fQMhwKAwANutu6hsKN4rQ5ibUngyeOtcx36Q/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNQbUeobwc1kRRhUko58xionMkyYelvjvQzlenrvqt7IjWh3GaEi9fa_bMbEQpQdiw-A/exec";
 
 const form = document.getElementById("reserveringForm");
 const melding = document.getElementById("melding");
@@ -19,6 +19,35 @@ function setLoading(isLoading, text = "Verzenden...") {
       submitBtn.dataset.originalText || "Wij komen eraan!";
   }
 }
+
+async function loadTijdsloten() {
+  const select = document.getElementById("tijdslot");
+  select.innerHTML = `<option value="">Kies een tijd</option>`;
+
+  try {
+    const res = await fetch(SCRIPT_URL); // doGet
+    const json = await res.json();
+
+    for (const s of json.slots) {
+      const opt = document.createElement("option");
+      opt.value = s.tijdslot;
+
+      if (s.beschikbaar <= 0) {
+        opt.textContent = `${s.tijdslot} (vol)`;
+        opt.disabled = true;
+      } else {
+        opt.textContent = `${s.tijdslot} (nog ${s.beschikbaar} vrij)`;
+      }
+
+      select.appendChild(opt);
+    }
+  } catch (err) {
+    console.error("Tijdsloten laden faalde:", err);
+    // fallback: laat de bestaande opties staan of toon melding
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadTijdsloten);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -101,4 +130,6 @@ function showError(text) {
 function showSuccess(text) {
   melding.textContent = text;
   melding.classList.add("success");
+  await loadTijdsloten();
+
 }
