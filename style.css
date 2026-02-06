@@ -185,7 +185,8 @@ button:disabled {
 /* Mobiel extra spacing */
 @media (max-width: 480px) {
   .container {
-    max-height: 90vh;
+    max-height: 100vh;
+    width: 100vw;
     overflow-y: auto;
     padding: 20px;
   }
