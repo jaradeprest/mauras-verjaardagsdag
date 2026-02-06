@@ -23,6 +23,52 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Basis bunny styling */
+.bunny {
+  position: absolute;
+  bottom: -150px; /* start onder scherm */
+  width: 80px; /* pas grootte aan */
+  height: auto;
+  z-index: 10;
+  animation: bunny-peek 2s ease-out forwards, bunny-bounce 2s ease-in-out 2s infinite;
+}
+
+/* Links en rechts positioneren */
+.bunny-left {
+  left: 10px;
+}
+
+.bunny-right {
+  right: 10px;
+}
+
+/* Animatie: van onder scherm naar beetje omhoog */
+@keyframes bunny-peek {
+  0% {
+    bottom: -150px;
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    bottom: 20px;
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  100% {
+    bottom: 40px; /* eindpositie boven schermrand */
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes bunny-bounce {
+  0%, 100% { bottom: 40px; transform: translateY(0); }
+  50% { bottom: 50px; transform: translateY(-5px); }
+}
+
+@media (max-width: 600px) {
+  .bunny {
+    width: 50px;
+  }
+}
+
 h1 {
   text-align: center;
   margin-bottom: 24px;
