@@ -32,75 +32,12 @@ body {
   bottom: 0;
   height: 80vh;
   z-index: 1;
-  animation-duration: 2s;
-  animation-fill-mode: forwards; /* blijft op eindpositie */
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
 }
 
 /* Links en rechts starten buiten scherm */
-.bunny-left { left: -150px; animation-name: bunny-left-hop; }
-.bunny-right { right: -150px; animation-name: bunny-right-hop; }
-
-/* Keyframes voor linkse konijn hop */
-@keyframes bunny-left-hop {
-  0% {
-    left: -250px;
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    left: 250px;
-    transform: translateY(-30px) rotate(-10deg); /* eerste sprong omhoog */
-  }
-  50% {
-    left: 120px;
-    transform: translateY(-10px) rotate(5deg); /* tweede hop */
-  }
-  75% {
-    left: 50px;
-    transform: translateY(-20px) rotate(-5deg); /* laatste hop */
-  }
-  100% {
-    left: 0px;
-    transform: translateY(0) rotate(0deg); /* eindpositie naast container */
-  }
-}
-
-/* Keyframes voor rechtse konijn hop */
-@keyframes bunny-right-hop {
-  0% {
-    right: -250px;
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    right: 250px;
-    transform: translateY(-30px) rotate(10deg); /* eerste sprong omhoog */
-  }
-  50% {
-    right: 120px;
-    transform: translateY(-10px) rotate(-5deg); /* tweede hop */
-  }
-  75% {
-    right: 50px;
-    transform: translateY(-20px) rotate(5deg); /* laatste hop */
-  }
-  100% {
-    right: 0px;
-    transform: translateY(0) rotate(0deg); /* eindpositie */
-  }
-}
-
-.bunny::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  background: rgba(0,0,0,0.25);
-  border-radius: 50%;
-  filter: blur(4px);
-  z-index: -1; /* achter konijn */
-}
+.bunny-left { left: 0px; }
+.bunny-right { right: 0px; }
 
 h1 {
   text-align: center;
