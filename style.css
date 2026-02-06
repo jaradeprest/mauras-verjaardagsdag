@@ -30,8 +30,7 @@ body {
 .bunny {
   position: absolute;
   bottom: 0;
-  width: 150px;
-  height: auto;
+  height: 100vh;
   z-index: 2;
   animation-duration: 2s;
   animation-fill-mode: forwards; /* blijft op eindpositie */
@@ -101,12 +100,6 @@ body {
   border-radius: 50%;
   filter: blur(4px);
   z-index: -1; /* achter konijn */
-}
-
-@media (max-width: 600px) {
-  .bunny {
-    width: 150px;
-  }
 }
 
 h1 {
