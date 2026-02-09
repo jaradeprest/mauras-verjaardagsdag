@@ -146,9 +146,13 @@ button:disabled {
 
 /* Mobiel extra spacing */
 @media (max-width: 480px) {
+  body {
+    padding: 0px;
+  }
+
   .container {
-    min-height: 100vh;
-    min-width: 100vw;
+    min-height: 100dvh;
+    min-width: 100dvw;
     overflow-y: auto;
     padding: 20px;
     margin-right: 0;
