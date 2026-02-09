@@ -41,7 +41,7 @@ async function loadTijdsloten() {
 
   if (!select) return;
 
-  // Loader aan
+  // Loader tonen
   if (loader) loader.classList.add("loading");
 
   select.disabled = true;
@@ -56,7 +56,6 @@ async function loadTijdsloten() {
     const json = await res.json();
     const slots = Array.isArray(json.slots) ? json.slots : [];
 
-    // Reset dropdown
     select.innerHTML = `<option value="">Kies een tijd</option>`;
 
     for (const s of slots) {
@@ -85,11 +84,12 @@ async function loadTijdsloten() {
     console.error("Tijdsloten laden faalde:", err);
 
     select.innerHTML = `
-      <option value="">⚠️ Tijdsloten laden mislukt</option>
+      <option value="">⚠️ Laden mislukt</option>
     `;
   } finally {
-    // Loader uit
+    // 🔥 Loader ALTIJD verbergen
     if (loader) loader.classList.remove("loading");
+
     select.disabled = false;
   }
 }
