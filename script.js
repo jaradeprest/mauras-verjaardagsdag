@@ -130,28 +130,24 @@ form.addEventListener("submit", async (e) => {
       method: "POST",
       body: JSON.stringify(data)
     });
-
-    if (!response.ok) {
-      throw new Error(`Netwerkfout: ${response.status}`);
-    }
-
+  
     const result = await response.json();
-
+  
     if (result.status === "vol") {
       showError("❌ Dit tijdslot is al vol. Kies een ander moment.");
-      await loadTijdsloten(); // refresh dropdown
+      await loadTijdsloten();
       return;
     }
-
+  
     if (result.status !== "ok") {
       showError("❌ Er ging iets mis. Probeer opnieuw.");
       return;
     }
-
+  
     showSuccess("✅ Reservering succesvol opgeslagen!");
     form.reset();
-    await loadTijdsloten(); // refresh dropdown na succes
-
+    await loadTijdsloten();
+  
   } catch (error) {
     console.error("Fetch error:", error);
     showError("❌ Er ging iets mis bij het verzenden. Probeer opnieuw.");
