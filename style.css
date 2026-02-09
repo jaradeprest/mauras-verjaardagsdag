@@ -178,4 +178,8 @@ button:disabled {
     box-shadow: none;        /* schaduw weg */
     border: 2px solid #fff; /* 🔥 witte border */
   }
+
+  h1 {
+    margin-top: 0;
+  }
 }
