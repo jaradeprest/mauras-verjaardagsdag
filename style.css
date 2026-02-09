@@ -86,17 +86,10 @@ select option {
   color: #ff9b36;
   margin-bottom: 6px;
   display: none;
-  transition: opacity .3s ease;
 }
 
 .tijdslot-loader.loading {
   display: block;
-}
-
-.tijdslot-loader:not(.loading) {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
 }
 
 input,
