@@ -155,8 +155,8 @@ button:disabled {
   }
   .container {
     max-width: 100%;
-    min-height: 95dvh;
-    min-width: 95dvw;
+    height: 95dvh;
+    width: 95dvw;
     padding: 20px;
     margin-right: auto;
   }
