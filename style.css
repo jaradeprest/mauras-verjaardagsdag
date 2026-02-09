@@ -152,4 +152,8 @@ button:disabled {
     overflow-y: auto;
     padding: 20px;
   }
+  .select {
+    margin-top: 0;
+    line-height: 1;
+  }
 }
