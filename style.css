@@ -155,6 +155,7 @@ button:disabled {
     min-width: 98dvw;
     overflow-y: auto;
     padding: 20px;
+    padding-top: 50px;
     margin-right: 2dvw;
     margin-left: 2dvw;;
     margin-top: 2dvh;
