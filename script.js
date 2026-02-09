@@ -37,17 +37,27 @@ function showSuccess(text) {
 // Tijdsloten + beschikbaarheid ophalen en dropdown vullen
 async function loadTijdsloten() {
   const select = document.getElementById("tijdslot");
+  const loader = document.getElementById("tijdslotLoader");
 
   if (!select) return;
 
-  select.innerHTML = `<option value="">Kies een tijd</option>`;
+  // Loader aan
+  if (loader) loader.classList.add("loading");
+
+  select.disabled = true;
+  select.innerHTML = `
+    <option value="">Tijdsloten aan het laden...</option>
+  `;
 
   try {
-    const res = await fetch(SCRIPT_URL); // doGet
+    const res = await fetch(SCRIPT_URL);
     if (!res.ok) throw new Error("Kon tijdsloten niet laden");
 
     const json = await res.json();
     const slots = Array.isArray(json.slots) ? json.slots : [];
+
+    // Reset dropdown
+    select.innerHTML = `<option value="">Kies een tijd</option>`;
 
     for (const s of slots) {
       const tijdslot = String(s.tijdslot || "").trim();
@@ -59,18 +69,28 @@ async function loadTijdsloten() {
       const opt = document.createElement("option");
       opt.value = tijdslot;
 
+      const etenTekst = eten ? ` · ${eten}` : "";
+
       if (!Number.isFinite(beschikbaar) || beschikbaar <= 0) {
-        opt.textContent = `${tijdslot} (vol)`;
+        opt.textContent = `${tijdslot}${etenTekst} (vol)`;
         opt.disabled = true;
       } else {
-        opt.textContent = `${tijdslot} = ${eten} (nog ${beschikbaar} vrij)`;
+        opt.textContent = `${tijdslot}${etenTekst} (nog ${beschikbaar} vrij)`;
       }
 
       select.appendChild(opt);
     }
+
   } catch (err) {
     console.error("Tijdsloten laden faalde:", err);
-    // fallback: laat enkel "Kies een tijd"
+
+    select.innerHTML = `
+      <option value="">⚠️ Tijdsloten laden mislukt</option>
+    `;
+  } finally {
+    // Loader uit
+    if (loader) loader.classList.remove("loading");
+    select.disabled = false;
   }
 }
 
