@@ -157,6 +157,7 @@ button:disabled {
     margin-right: auto;
   }
   .select {
+    height: 60px;
     line-height: 2;
   }
 }
