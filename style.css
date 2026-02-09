@@ -41,6 +41,7 @@ body {
 
 /* Basis bunny styling */
 .bunny {
+  hidden: false;
   position: absolute;
   bottom: 0;
   height: 60vh;
@@ -141,7 +142,6 @@ button:disabled {
     padding: 20px;
   }
   .bunny {
-    height: auto;
-    width: 50px;
+    hidden: true;
   }
 }
