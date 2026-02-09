@@ -147,12 +147,9 @@ button:disabled {
 /* Mobiel extra spacing */
 @media (max-width: 480px) {
   .container {
-    max-height: 100vh;
-    max-width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     overflow-y: auto;
     padding: 20px;
-  }
-  .bunny {
-    hidden: true;
   }
 }
