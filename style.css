@@ -71,12 +71,6 @@ label {
   font-weight: 600;
 }
 
-select {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 40px;
-}
-
 select option {
   padding: 10px 0;
 }
@@ -101,8 +95,18 @@ button {
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ff8f9d;
-  line-height: 1.5;
+  line-height: 1.2;       /* ✅ minder kans op clipping */
+  box-sizing: border-box; /* ✅ belangrijk */
   font-family: Gill Sans, sans-serif;
+}
+
+/* specifiek voor select (native quirks) */
+select {
+  min-height: 48px;
+  height: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 input:focus,
@@ -155,9 +159,5 @@ button:disabled {
     min-width: 95dvw;
     padding: 20px;
     margin-right: auto;
-  }
-  .select {
-    height: 60px;
-    line-height: 2;
   }
 }
