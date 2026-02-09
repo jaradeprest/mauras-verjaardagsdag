@@ -148,16 +148,24 @@ button:disabled {
   color: #f7072b;
 }
 
-/* Mobiel extra spacing */
+/* Mobiel */
+/* Mobiel */
 @media (max-width: 480px) {
   body {
-    padding: 0px;
+    background-image: none;
+    background-color: #FCC3CA;
+    padding: 0;
   }
+
+  .bunny {
+    display: none;
+  }
+
   .container {
     max-width: 100%;
-    height: 95dvh;
-    width: 95dvw;
-    padding: 20px;
-    margin-right: auto;
+    margin: 12px;
+    width: auto;
+    height: auto;
+    padding: 1rem;
   }
 }
