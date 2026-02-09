@@ -151,6 +151,7 @@ button:disabled {
 /* Mobiel */
 @media (max-width: 480px) {
 
+  /* body niet meer centreren + achtergrond weg */
   body {
     background-image: none;
     background-color: #FCC3CA;
@@ -161,17 +162,20 @@ button:disabled {
     min-height: 100dvh;
   }
 
-  /* konijnen weg */
+  /* konijnen verbergen */
   .bunny {
     display: none;
   }
 
-  /* container met marge rondom */
+  /* container mobiel */
   .container {
     max-width: 100%;
     margin: 12px;
     padding: 1rem;
     width: auto;
     height: auto;
+
+    box-shadow: none;        /* schaduw weg */
+    border: 2px solid #fff; /* 🔥 witte border */
   }
 }
