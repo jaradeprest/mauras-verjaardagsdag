@@ -147,7 +147,7 @@ button:disabled {
 /* Mobiel extra spacing */
 @media (max-width: 480px) {
   body {
-    padding: 40px;
+    padding: 0px;
   }
   .container {
     max-width: 100%;
