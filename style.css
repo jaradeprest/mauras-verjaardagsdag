@@ -148,6 +148,10 @@ button:disabled {
   color: #f7072b;
 }
 
+.cadeautips {
+  font-size: 12px;
+}
+
 /* Mobiel */
 @media (max-width: 480px) {
 
